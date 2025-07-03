@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-i18n="title">FAYZ DENT | Стоматология международного уровня</title>
+
+    <!-- шрифты, стили, и т.д. -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/adaptive.main.css">
+</head>
+
+<body>
+    <header class="header on-top">
+        <nav class="header__menu">
+            <a href="/" class="header__side header__logo title" data-i18n="logo">FAYZ DENT</a>
+
+            <ul class="header__side header__links header__links--close">
+                <li class="header__menu-trigger">
+                    <button id="menuToggle" class="header__trigger title" type="button" data-i18n-open="menuOpen"
+                        data-i18n-close="menuClose" onclick="toggleMenu()">
+                        <!-- начальный текст подставит JS при загрузке -->
+                    </button>
+                </li>
+
+                <li class="header__link"><a href="#about" class="header__link" data-i18n="about">О стоматологии</a></li>
+                <li class="header__link"><a href="#services" class="header__link" data-i18n="services">Услуги</a></li>
+                <li class="header__link"><a href="#specialists" class="header__link"
+                        data-i18n="specialists">Специалисты</a></li>
+                <li class="header__link"><a href="#works" class="header__link" data-i18n="works">Наши работы</a></li>
+                <li class="header__link"><a href="#price" class="header__link" data-i18n="pricing">Цены</a></li>
+                <li class="header__link"><a href="#contacts" class="header__link" data-i18n="contacts">Контакты</a></li>
+                <li class="header__link"><a href="#faq" class="header__link" data-i18n="faq">Ответы на вопросы</a></li>
+            </ul>
+
+            <article class="header__side header__info">
+                <div class="lang-switcher" id="langSwitcher">
+                    <button class="current" id="currentLang">
+                        <span class="label title">
+                            <img id="currentFlag" src="https://flagcdn.com/w20/ru.png" alt="🇷🇺">
+                            <span id="currentLabel">RU</span>
+                        </span>
+                    </button>
+                    <ul class="options" id="langOptions">
+                        <li data-lang="ru" data-flag="https://flagcdn.com/w20/ru.png">
+                            <img src="https://flagcdn.com/w20/ru.png" alt="🇷🇺"> RU
+                        </li>
+                        <li data-lang="en" data-flag="https://flagcdn.com/w20/gb.png">
+                            <img src="https://flagcdn.com/w20/gb.png" alt="gb"> EN
+                        </li>
+                        <li data-lang="uz" data-flag="https://flagcdn.com/w20/uz.png">
+                            <img src="https://flagcdn.com/w20/uz.png" alt="uz"> UZ
+                        </li>
+                    </ul>
+                </div>
+                <a href="tel:+998901234567" class="header__tel title">+998901234567</a>
+                <span class="header__times title">
+                    <span data-i18n="schedule">ПН – СБ</span><br>
+                    <span data-i18n="hours">9:00 - 19:00</span>
+                </span>
+            </article>
+        </nav>
+    </header>
+
+    <main>
+        <section class="first-screen">
+            <img src="img/patients.webp" loading="lazy" alt="счастливый пациент стоматологии FAYZ DENT"
+                class="first-screen__bg">
+            <h4 class="first-screen__text" data-i18n="heroSubtitle">Опытные стоматологи мирового уровня</h4>
+            <h1 class="first-screen__title title" data-i18n="heroTitle">
+                Красивая белоснежная улыбка не мечта, а реальность в нашей клинике
+            </h1>
+            <h4 class="first-screen__secondary-text">
+                <span data-i18n="heroLead">Приходи и убедись, что мы лучшие</span>
+                <a class="first-screen__link" href="#contact" data-i18n="heroCta">Записаться на консультацию</a>
+            </h4>
+        </section>
+        <section class="about">
+            <article class="about__text" data-i18n="aboutText">
+                <strong>FAYZ DENT</strong> — это <strong>современная</strong> стоматологическая клиника, где
+                <strong>профессиональные</strong> стоматологи объединяют <strong>опыт
+                    и передовые технологии</strong>. Мы предлагаем полный спектр услуг — от профилактики и гигиены до
+                сложного
+                протезирования и имплантации — <strong>с гарантией безболезненного лечения и максимального
+                    комфорта</strong>.
+                В <strong>FAYZ DENT</strong> вы получите не просто лечение, а комплексную заботу о
+                <strong>здоровье</strong> полости рта: от подробной
+                диагностики до долговременного сопровождения. Наша цель — <strong>ваша идеальная улыбка и абсолютная
+                    уверенность
+                    в качестве оказанной помощи.</strong>
+
+                Запишитесь на консультацию и убедитесь, как приятно доверять своё здоровье настоящим
+                профессионалам!
+            </article>
+        </section>
+
+        <section class="ads">
+            <img src="img/smile.png" loading="lazy" alt="девушка с белоснежной улыбкой" class="ads__bg">
+
+            <div class="ads__text">
+                <span class="ads__hint" data-i18n="adsHint">Думаете, белоснежная улыбка — это дорого, долго и больно? В
+                    FAYZ DENT мы опровергаем все мифы: в короткие сроки, без дискомфорта и по разумной цене вы получите
+                    по-настоящему голливудский результат. Радуйтесь жизни, сияя своей идеальной улыбкой и заряжая теплом
+                    всех вокруг!</span>
+                <a href="#contact" class="ads__link first-screen__link title" data-i18n="heroCta">Записаться на
+                    консультацию</a>
+            </div>
+        </section>
+        <section id="services" class="services">
+            <div class="services__item">
+                <img src="img/services_01.webp" alt="Лечение зубов" class="services__image">
+                <h2 class="services__item-title title" data-i18n="item1.title">Лечение зубов</h2>
+                <p class="services__item-desc" data-i18n="item1.desc">Эффективное лечение кариеса, пульпита и других
+                    заболеваний.</p>
+            </div>
+            <div class="services__item">
+                <img src="img/services_02.webp" alt="Эндодонтия зуба" class="services__image">
+                <h2 class="services__item-title title" data-i18n="item2.title">Эндодонтия зуба</h2>
+                <p class="services__item-desc" data-i18n="item2.desc">Качественное лечение каналов зуба под микроскопом.
+                </p>
+            </div>
+            <div class="services__item">
+                <img src="img/services_03.webp" alt="Художественная реставрация зубов" class="services__image">
+                <h2 class="services__item-title title" data-i18n="item3.title">Художественная реставрация зубов</h2>
+                <p class="services__item-desc" data-i18n="item3.desc">Восстановление формы и цвета зубов с помощью
+                    композитных материалов.</p>
+            </div>
+            <div class="services__item">
+                <img src="img/services_04.webp" alt="Профессиональная чистка" class="services__image">
+                <h2 class="services__item-title title" data-i18n="item4.title">Профессиональная чистка</h2>
+                <p class="services__item-desc" data-i18n="item4.desc">Удаление зубного камня и налета для здоровой
+                    улыбки.</p>
+            </div>
+            <div class="services__item">
+                <img src="img/services_05.webp" alt="Отбеливание" class="services__image">
+                <h2 class="services__item-title title" data-i18n="item5.title">Отбеливание</h2>
+                <p class="services__item-desc" data-i18n="item5.desc">Безопасное отбеливание зубов в кабинете
+                    стоматолога.</p>
+            </div>
+            <div class="services__item">
+                <img src="img/services_06.webp" alt="Протезирование" class="services__image">
+                <h2 class="services__item-title title" data-i18n="item6.title">Протезирование</h2>
+                <p class="services__item-desc" data-i18n="item6.desc">Изготовление и установка съёмных и несъёмных
+                    протезов.</p>
+            </div>
+            <div class="services__item">
+                <img src="img/services_07.webp" alt="Виниры, Циркон" class="services__image">
+                <h2 class="services__item-title title" data-i18n="item7.title">Виниры, Циркон</h2>
+                <p class="services__item-desc" data-i18n="item7.desc">Тончайшие фарфоровые накладки для идеальной
+                    эстетики.</p>
+            </div>
+            <div class="services__item">
+                <img src="img/services_08.webp" alt="Металлокерамика" class="services__image">
+                <h2 class="services__item-title title" data-i18n="item8.title">Металлокерамика</h2>
+                <p class="services__item-desc" data-i18n="item8.desc">Надёжные коронки из металлокерамики для
+                    долговечности.</p>
+            </div>
+        </section>
+        <div style="width:100vw; height:300vh;"></div>
+    </main>
+</body>
+<script src="https://unpkg.com/lenis@1.3.4/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/main.js"></script>
+<script src="https://kit.fontawesome.com/8f446d19ac.js" crossorigin="anonymous"></script>
+
+</html>
