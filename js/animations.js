@@ -1,10 +1,11 @@
+const header = document.querySelector(".header");
+const menu = document.querySelector(".header__links");
+
 if (window.scrollY > window.innerHeight - window.innerWidth * 4 / 100) {
-  document.querySelector(".header").classList.remove("on-top")
+  header.classList.remove("on-top");
 }
 
 const toggleMenu = () => {
-  const menu = document.querySelector(".header__links");
-  const header = document.querySelector(".header");
   const btnToggle = document.getElementById("menuToggle");
 
   // Переключаем классы меню
@@ -37,26 +38,36 @@ const toggleMenu = () => {
 };
 
 
-window.addEventListener("scroll", () => {
-  const header = document.querySelector(".header")
-  const menu = document.querySelector(".header__links")
+const handleScroll = () => {
   if (window.scrollY > window.innerHeight - window.innerWidth * 4 / 100) {
-    header.classList.remove("on-top")
-    header.style.top = 0
-  }
-  else {
-    header.classList.add("on-top")
-
+    header.classList.remove("on-top");
+    header.style.top = 0;
+  } else {
+    header.classList.add("on-top");
     if (menu.classList.contains("header__links--open")) {
-      header.style.top = 0
-      header.style.paddingTop = "calc(var(--offset) * 2)"
-      header.style.backgroundColor = "white"
-    }
-    else {
-      header.style.top = "calc(var(--offset) * 2 - var(--offset) * 0.5)"
+      header.style.top = 0;
+      header.style.paddingTop = "calc(var(--offset) * 2)";
+      header.style.backgroundColor = "white";
+    } else {
+      header.style.top = "calc(var(--offset) * 2 - var(--offset) * 0.5)";
     }
   }
-})
+};
+
+let scrollTick = false;
+window.addEventListener(
+  "scroll",
+  () => {
+    if (!scrollTick) {
+      scrollTick = true;
+      requestAnimationFrame(() => {
+        handleScroll();
+        scrollTick = false;
+      });
+    }
+  },
+  { passive: true }
+);
 window.addEventListener('load', () => {
   const tl = gsap.timeline({
     defaults: { ease: "power3.out" }
