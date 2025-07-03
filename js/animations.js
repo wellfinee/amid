@@ -124,21 +124,23 @@ window.addEventListener('load', () => {
     });
   });
 
-  section = document.querySelector('section.ads')
+  const adsSection = document.querySelector('section.ads');
 
-  gsap.set(section, { opacity: 0, x: 100 });
+  gsap.set(adsSection, { opacity: 0, x: 100 });
 
   ScrollTrigger.create({
-    trigger: section,
+    trigger: adsSection,
     start: 'top 80%',
     end: 'bottom 20%',
-    onEnter: () => gsap.to(section, { opacity: 1, x: 0, duration: 0.6, ease: 'power3.out' }),
-    onLeave: () => gsap.to(section, { opacity: 0, x: 100, duration: 0.5, ease: 'power3.in' }),
-    onEnterBack: () => gsap.to(section, { opacity: 1, x: 0, duration: 0.6, ease: 'power3.out' }),
-    onLeaveBack: () => gsap.to(section, { opacity: 0, x: -100, duration: 0.5, ease: 'power3.in' }),
+    onEnter: () => gsap.to(adsSection, { opacity: 1, x: 0, duration: 0.6, ease: 'power3.out' }),
+    onLeave: () => gsap.to(adsSection, { opacity: 0, x: 100, duration: 0.5, ease: 'power3.in' }),
+    onEnterBack: () => gsap.to(adsSection, { opacity: 1, x: 0, duration: 0.6, ease: 'power3.out' }),
+    onLeaveBack: () => gsap.to(adsSection, { opacity: 0, x: -100, duration: 0.5, ease: 'power3.in' }),
   });
 
-        gsap.fromTo(document.querySelectorAll(".services__item"),
+  gsap.utils.toArray('.services__item').forEach(item => {
+    gsap.fromTo(
+      item,
       { y: 50, opacity: 0 },
       {
         y: 0,
@@ -146,11 +148,12 @@ window.addEventListener('load', () => {
         duration: 0.6,
         ease: 'power3.out',
         scrollTrigger: {
-          trigger: document.querySelectorAll(".services__item"),
+          trigger: item,
           start: 'top 85%',
           toggleActions: 'play reverse play reverse'
         }
       }
     );
+  });
 });
 
